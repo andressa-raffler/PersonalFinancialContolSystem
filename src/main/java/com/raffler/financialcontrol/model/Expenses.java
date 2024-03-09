@@ -1,4 +1,4 @@
-package com.raffler.financialcontrole.model;
+package com.raffler.financialcontrol.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -18,10 +18,8 @@ public class Expenses implements Serializable {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "MM-yyyy")
     @Column(name = "month_year_id", nullable = false)
-    private Date monthYearId;
+    private String monthYearId;
 
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd-MM-yyyy")
@@ -39,6 +37,9 @@ public class Expenses implements Serializable {
 
     @Column(name = "secundary_type")
     private String secundaryType;
+
+    @Column(name = "portion")
+    private String portion;
 
 
 }
